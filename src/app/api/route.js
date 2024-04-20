@@ -6,10 +6,11 @@ const express = require("express");
 const app = express();
 
 // POST 요청 처리
+
 app.post("/username", (req, res) => {
   const username = req.body.username;
   const responseData = { username: username }; // JSON 형식의 데이터 생성
-  res.json(responseData); // JSON 형식의 데이터 응답
+  res.status(200).json(responseData); // JSON 형식의 데이터 응답
 });
 
 // 서버 시작
