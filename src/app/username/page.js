@@ -1,9 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
 
-function page({ params }) {
-  const data = { username: "사용자이름" };
-  async function logJSONData() {
+function page() {
+  async function logJSONData(formdata) {
     // 사용자 이름을 담은 JSON 객체 생성
 
     // fetch를 사용하여 서버에 POST 요청 보내기
@@ -12,7 +11,7 @@ function page({ params }) {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify(formdata),
     })
       .then((response) => response.json())
       .then((data) => {
@@ -28,7 +27,7 @@ function page({ params }) {
   useEffect(() => {
     logJSONData();
   }, []);
-  return <div>{data.username}</div>;
+  return <div></div>;
 }
 
 export default page;
