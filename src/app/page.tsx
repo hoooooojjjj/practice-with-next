@@ -1,20 +1,13 @@
 "use client";
-import { useState } from "react";
+import useStore from "./stores/exampleStore";
 
 export default function Home() {
-  const [username, setUsername] = useState("");
+  const count = useStore().count;
   return (
     <div>
-      <form action="/username" method="post">
-        <input
-          type="text"
-          name="username"
-          value={username}
-          onChange={(e) => {
-            setUsername(e.target.value);
-          }}
-        ></input>
-      </form>
+      <div>{count}</div>
+      <button onClick={useStore().increaseCount}>+</button>
+      <button onClick={useStore().decreaseCount}>-</button>
     </div>
   );
 }
