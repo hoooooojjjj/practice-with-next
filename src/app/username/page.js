@@ -1,18 +1,14 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import styled from "@emotion/styled";
-const RedButton = styled.button({
-  backgroundColor: "red",
-});
-
-const BlueHeader = styled.h1({
-  color: "blue",
-});
+import { ChooseButton, BtnWrap } from "./styled";
 function page() {
   return (
     <div>
-      <BlueHeader>헤더</BlueHeader>
-      <RedButton>버튼</RedButton>
+      <BtnWrap>
+        <ChooseButton color="red"> 버튼 </ChooseButton>
+        <ChooseButton color="blue"> 버튼 </ChooseButton>
+        <ChooseButton color="green"> 버튼 </ChooseButton>
+        <ChooseButton color="pink"> 버튼 </ChooseButton>
+      </BtnWrap>
     </div>
   );
 }
